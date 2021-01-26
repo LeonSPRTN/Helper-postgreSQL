@@ -3,9 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Helper_postgreSQL.ViewModels"
         xmlns:local="clr-namespace:Helper_postgreSQL"
         mc:Ignorable="d"
-        Title="MainWindow" Height="327" Width="504">
+        Title="{Binding Path=Title}" Height="330" Width="429">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
     <Grid>
         <DockPanel LastChildFill="True">
             <Menu DockPanel.Dock="Top">
@@ -17,9 +21,15 @@
             <TabControl DockPanel.Dock="Top" x:Name="tabControl" Height="271">
                 <TabItem Header="Backup">
                     <Grid Background="#FFE5E5E5" Height="268">
-                        <CheckBox x:Name="checkBox" Content="Schema" HorizontalAlignment="Left" Margin="306,163,0,90"/>
-                        <CheckBox x:Name="checkBox1" Content="Data" HorizontalAlignment="Left" Margin="306,194,0,0" VerticalAlignment="Top"/>
-                        <Button x:Name="button" Content="Start" HorizontalAlignment="Left" Margin="430,215,0,0" VerticalAlignment="Top" Height="27" Width="58"/>
+                        <Grid.ColumnDefinitions>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox x:Name="scheme" Content="Scheme" HorizontalAlignment="Left" Margin="351,26,0,227"/>
+                        <CheckBox x:Name="data" Content="Data" HorizontalAlignment="Left" Margin="351,66,0,0" VerticalAlignment="Top"/>
+                        <Button x:Name="start" Content="Start" HorizontalAlignment="Left" Margin="355,202,0,0" VerticalAlignment="Top" Height="27" Width="58"/>
+                        <TextBox x:Name="textBox_path_file_schema" HorizontalAlignment="Left" Margin="124,62,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="213" Height="23"/>
+                        <TextBox x:Name="textBox_path_file_data" HorizontalAlignment="Left" Margin="124,22,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="213" Height="23"/>
+                        <Label x:Name="label_path_file_schema" Content="Path file &quot;schema&quot;:" HorizontalAlignment="Left" Margin="7,61,0,0" VerticalAlignment="Top" Width="112"/>
+                        <Label x:Name="label_path_file_data" Content="Path file &quot;data&quot;:" HorizontalAlignment="Left" Margin="7,19,0,0" VerticalAlignment="Top" Width="98"/>
                     </Grid>
                 </TabItem>
                 <TabItem Header="Restore">

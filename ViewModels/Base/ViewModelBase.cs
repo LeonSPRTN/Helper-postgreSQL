@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 
 namespace Helper_postgreSQL.ViewModels.Base
 {
-    internal abstract class ViewModel: INotifyPropertyChanged 
+    internal abstract class ViewModelBase: INotifyPropertyChanged 
     {
         public event PropertyChangedEventHandler PropertyChanged;
    
