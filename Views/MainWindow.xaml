@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:Helper_postgreSQL.ViewModels"
+        xmlns:comm="clr-namespace:Helper_postgreSQL.Infrastructure.Commands"
         mc:Ignorable="d"
         Title="{Binding Title}" Height="330" Width="429">
     
@@ -16,7 +17,12 @@
             
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="File">
-                    <MenuItem Header="Exit"></MenuItem>
+                    <!--<MenuItem Header="Exit" Command="{Binding CloseApplicationCommand}" />-->
+                    <MenuItem Header="Exit">
+                        <MenuItem.Command>
+                            <comm:CloseApplicationCommand/>
+                        </MenuItem.Command>
+                    </MenuItem>
                 </MenuItem>
                 <MenuItem Header="Options">
                     <MenuItem Header="Setting"/>
