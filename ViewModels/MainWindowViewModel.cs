@@ -6,11 +6,10 @@ namespace Helper_postgreSQL.ViewModels
     {
         #region Заголовок окна
 
+        /// <summary>Заголовок окна</summary>
         private string _Title = "Helper postgres";
 
-        /// <summary>
-        /// Заголовок окна
-        /// </summary>
+        /// <summary>Заголовок окна</summary>
         public string Title
         {
             get => _Title;
