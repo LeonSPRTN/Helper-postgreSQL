@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace Helper_postgreSQL.ViewModels
 {
-    class SettingWindowViewModel : ViewModelBase
+    internal class SettingWindowViewModel : ViewModelBase
     {
         #region Заголовок окна
 
-        private string _Title;
+        /// <summary>
+        /// Заголовок окна
+        /// </summary>
+        private string _Title = "Setting";
 
         /// <summary>
         /// Заголовок окна
@@ -22,6 +25,11 @@ namespace Helper_postgreSQL.ViewModels
 
             set => Set(ref _Title, value);
         }
+        #endregion
+
+        #region Загрузка данных
+
+
         #endregion
 
     }

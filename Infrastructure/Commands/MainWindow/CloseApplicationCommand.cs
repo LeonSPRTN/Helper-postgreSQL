@@ -4,7 +4,7 @@ using Helper_postgreSQL.Infrastructure.Commands.Base;
 
 namespace Helper_postgreSQL.Infrastructure.Commands
 {
-    internal class CloseApplicationCommand : Command
+    internal class CloseApplicationCommand : CommandBase
     {
         public override bool CanExecute(object parameter) => true;
 

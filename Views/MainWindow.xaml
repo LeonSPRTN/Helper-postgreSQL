@@ -6,7 +6,8 @@
         xmlns:vm="clr-namespace:Helper_postgreSQL.ViewModels"
         xmlns:comm="clr-namespace:Helper_postgreSQL.Infrastructure.Commands"
         mc:Ignorable="d"
-        Title="{Binding Title}" Height="330" Width="429">
+        Title="{Binding Path=Title}" 
+        Height="330" Width="429">
     
     <Window.DataContext>
         <vm:MainWindowViewModel/>
@@ -25,15 +26,18 @@
                     </MenuItem>
                 </MenuItem>
                 <MenuItem Header="Options">
-                    <MenuItem Header="Setting"/>
+                    <MenuItem Header="Setting">
+                        <MenuItem.Command>
+                            <comm:OpenWindowSettingCommand/>
+                        </MenuItem.Command>
+                    </MenuItem>
                 </MenuItem>
                 <MenuItem Header="Help"/>
             </Menu>
 
-            <TabControl DockPanel.Dock="Top" x:Name="tabControl" Height="271">
+            <TabControl DockPanel.Dock="Top" x:Name="TabControl" Height="271">
                 <TabItem Header="Backup">
                     <Grid Background="#FFE5E5E5" Height="268">
-                        <Grid.ColumnDefinitions></Grid.ColumnDefinitions>
                         <CheckBox x:Name="SchemaCheckBox" Content="Schema" HorizontalAlignment="Left" Margin="351,26,0,227"/>
                         <CheckBox x:Name="DataCheckBox" Content="Data" HorizontalAlignment="Left" Margin="351,66,0,0" VerticalAlignment="Top"/>
                         <Button x:Name="StartButton" Content="Start" HorizontalAlignment="Left" Margin="355,202,0,0" VerticalAlignment="Top" Height="27" Width="58"/>
@@ -52,10 +56,10 @@
                 <StatusBarItem>
                     <TextBlock x:Name="TextStatusMain" MinWidth="220">Ready</TextBlock>
                 </StatusBarItem>
-                <StatusBarItem x:Name="StatusBarMain" Grid.Column="1">
+                <StatusBarItem x:Name="StatusBarMain">
                     <ProgressBar Minimum="0" Maximum="100" Value="30" Width="80" Height="20" MinWidth="100"/>
                 </StatusBarItem>
-                <StatusBarItem Grid.Column="2">
+                <StatusBarItem >
                     <TextBlock>Set</TextBlock>
                 </StatusBarItem>
             </StatusBar>

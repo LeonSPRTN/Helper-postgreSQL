@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Folder Include="Data\Database\" />
+    <Folder Include="Infrastructure\Commands\SettingWindow\" />
     <Folder Include="Services\" />
   </ItemGroup>
 

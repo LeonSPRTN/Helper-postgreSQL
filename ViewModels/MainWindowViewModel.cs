@@ -34,8 +34,6 @@ namespace Helper_postgreSQL.ViewModels
             Application.Current.Shutdown();
         }
 
-
-
         #endregion
 
         #endregion

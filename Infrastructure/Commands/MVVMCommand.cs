@@ -4,7 +4,7 @@ using Helper_postgreSQL.Infrastructure.Commands.Base;
 
 namespace Helper_postgreSQL.Infrastructure.Commands
 {
-    internal class MVVMCommand : Command
+    internal class MVVMCommand : CommandBase
     {
         private readonly Action<object> _Execute;
         private readonly Func<object, bool> _CanExecute;
